@@ -13,10 +13,10 @@ pytorch (.pt) format
 import numpy as np
 
 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
-plt.plot(np.arange(10))
-plt.close()
+#plt.plot(np.arange(10))
+#plt.close()
 
 
 
@@ -46,10 +46,10 @@ input_dim = 32
 data_size = 4
 
 # Location of your data
-location = "D:/Documents/University/MVA/CEA/Data/data_folder_test/"
+location = "/home/boussugef/0_WORK/DATA/MATTHIEU/prod/data_folder_test/"
 
 # Where to save
-save_path = "D:/Documents/University/MVA/CEA/Data/image_folder_test/"
+save_path = "/home/boussugef/0_WORK/DATA/MATTHIEU/prod/image_folder_test/"
 
 #%%
 
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     #%%
     
     
-    mesh_points, tangents_torch, centroids_torch, grid_ext=  preprocess(location, data_size, input_dim)
+    mesh_points, Y_torch, tangents_torch, centroids_torch, grid_ext=  preprocess(location, data_size, input_dim)
     
     N = centroids_torch.shape[0]
     #%%

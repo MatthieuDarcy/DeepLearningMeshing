@@ -35,19 +35,20 @@ Modify this
 
 """
 # Modify this to select your model folder
-model_path = "model_path"
+model_path = "/home/boussugef/0_WORK/DATA/MATTHIEU/prod/model_folder_test/"
 
-image_name = "image_name"
-im_path = "im_path"
+image_name = "image_test.pt"
+im_path = "/home/boussugef/0_WORK/DATA/MATTHIEU/prod/image_folder_test/"
+
 
 
 
 # data location
-location ='data location' 
-save_location = 'save_location'
+location ='/home/boussugef/0_WORK/DATA/MATTHIEU/prod/data_folder_test/'
+save_location = '/home/boussugef/0_WORK/DATA/MATTHIEU/prod/predict_folder_test/'
 
 # Data size
-data_size = 1197
+data_size = 4
 
 #%%
 
@@ -68,7 +69,7 @@ model = model.to(device)
 
 if __name__ == "__main__":
 
-    mesh_points, tangents_torch, centroids_torch, grid_ext =  preprocess(location, data_size, input_dim)
+    mesh_points, Y_torch, tangents_torch, centroids_torch, grid_ext =  preprocess(location, data_size, input_dim)
     
     
     N = centroids_torch.shape[0]
@@ -77,7 +78,7 @@ if __name__ == "__main__":
     for m in mesh_points:
         # compute the pairwise distance
         
-         dist = torch.cdist(m, grid_ext[:, :, 0])
+         dist = torch.cdist(m, grid_ext[0])
          
          closest_points.append(torch.min(dist, axis = -1)[-1])
     
@@ -127,8 +128,8 @@ if __name__ == "__main__":
         
         pred = vf_pred[0].numpy()
         
-        temp = np.zeros(shape = (pred.shape[0], 1))
-        pred = np.vstack(pred, temp)
+        #temp = np.zeros(shape = (pred.shape[0], 1))
+        #pred = np.vstack(pred, temp)
         
         mesh = meshio.Mesh(
             mesh.points,

@@ -39,17 +39,17 @@ train_size = 2#int(input("Size of training set?"))
 
 
 # Location of the meshes
-location ="D:/Documents/University/MVA/CEA/Data/data_folder_test/"
+location = "/home/boussugef/0_WORK/DATA/MATTHIEU/prod/data_folder_test/"
 data_size = 4
 
 # Location of the images
-im_path = 'D:/Documents/University/MVA/CEA/Data/' + "Images_data/"
+im_path = "/home/boussugef/0_WORK/DATA/MATTHIEU/prod/image_folder_test/"
 
 # Name of the images
 image_name = "image_test.pt"
 
 # Model path
-model_path = "D:/Documents/University/MVA/CEA/Data/Code_clean/UNet/models"
+model_path = "/home/boussugef/0_WORK/DATA/MATTHIEU/prod/model_folder_test/"
 
 # Seed for the train test split 
 shuffle_seed = 0
